@@ -15,7 +15,7 @@ const Services = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl"><h2 className="text-4xl font-bold text-slate-900 mb-4">Integrated Maintenance</h2><p className="text-slate-600 text-lg">Comprehensive solutions for heavy industry asset integrity.</p></div>
-          <a href="#" className="font-bold flex items-center gap-2 hover:gap-3 transition-all" style={{ color: COLORS.primary }}>View All Solutions <ArrowRight size={20}/></a>
+          <a href="#" className="font-bold flex items-center gap-2 hover:gap-3 transition-all" style={{ color: COLORS.primary }}>View All Services <ArrowRight size={20}/></a>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {servicesList.map((service, index) => (
