@@ -48,7 +48,7 @@ export const ALL_PROJECTS = [
     year: "Apr 2016 - Dec 2016",
     category: "industrial",
     service: "Insulation",
-    image: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "projects/ailindo.jpg",
     desc: "Cold insulation maintenance for industrial gas distribution pipelines."
   },
   {
@@ -70,7 +70,7 @@ export const ALL_PROJECTS = [
     year: "2009 - 2011",
     category: "industrial",
     service: "Integrated Services",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "projects/purwakarta.png",
     desc: "Multi-phase expansion project support involving extensive scaffolding and insulation works."
   },
   {
@@ -92,7 +92,7 @@ export const ALL_PROJECTS = [
     year: "Jun 2012 - Oct 2012",
     category: "industrial",
     service: "Integrated Services",
-    image: "https://plus.unsplash.com/premium_photo-1661962692059-55d5a4319814?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "projects/kalimantan.jpg",
     desc: "Complete insulation and scaffolding services for Palm Oil Mill capacity expansion."
   },
   {
