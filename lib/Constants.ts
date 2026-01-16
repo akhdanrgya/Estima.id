@@ -8,69 +8,102 @@ export const COLORS = {
 
 export const ALL_PROJECTS = [
   {
-    id: 1,
-    title: "Thermal Insulation for GTG Piping",
-    client: "PT Pertamina (Persero) RU IV",
-    location: "Cilacap, Central Java",
-    year: "2024",
+    id: 13,
+    title: "Salak Brine Heat Recovery Power Plant",
+    client: "Star Energy",
+    location: "Sukabumi, West Java",
+    year: "Sep 2022 - Mar 2023",
+    category: "power-plant", // Geothermal Power
+    service: "Integrated Services",
+    image: "header.jpg",
+    desc: "Scaffolding and Insulation works for Brine Heat Recovery unit at Salak Geothermal field."
+  },
+  {
+    id: 7,
+    title: "EPC-1 Banyu Urip Project",
+    client: "Pertamina / MCL (ExxonMobil)",
+    location: "Bojonegoro, East Java",
+    year: "Jun 2013 - Dec 2015",
     category: "oil-gas",
-    service: "Insulation",
-    image: "https://images.unsplash.com/photo-1563293777-62a2d4277732?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    desc: "Complete hot insulation works for Gas Turbine Generator piping system ensuring minimal heat loss."
+    service: "Integrated Services",
+    image: "projects/cepu.jpg",
+    desc: "Major scaffolding and insulation project for the EPC-1 early production facilities."
   },
   {
-    id: 2,
-    title: "Scaffolding for Boiler Maintenance",
-    client: "PLTU Jawa 7 (Energy)",
-    location: "Banten, West Java",
-    year: "2023",
-    category: "power-plant",
-    service: "Scaffolding",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    desc: "Erection and dismantling of 5000m³ tubular scaffolding for annual boiler turnaround."
-  },
-  {
-    id: 3,
-    title: "Storage Tank Sandblasting",
-    client: "Chandra Asri Petrochemical",
-    location: "Cilegon, Banten",
-    year: "2023",
+    id: 12,
+    title: "Gas Facilities Pelintung Project",
+    client: "PT. Aneka Gas Industri Tbk.",
+    location: "Pelintung, Dumai",
+    year: "Sep 2020 - Nov 2020",
     category: "industrial",
-    service: "Painting",
-    image: "https://images.unsplash.com/photo-1535068484677-74435ce2665b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    desc: "Surface preparation SA 2.5 and 3-layer coating application for chemical storage tanks."
+    service: "Scaffolding",
+    image: "services/scaffolding.jpg",
+    desc: "Industrial gas facility construction support providing safe access solutions."
   },
   {
-    id: 4,
-    title: "Cryogenic Insulation LNG Line",
-    client: "Badak LNG",
-    location: "Bontang, East Kalimantan",
-    year: "2022",
-    category: "oil-gas",
+    id: 9,
+    title: "Routine Maintenance",
+    client: "PT. Air Liquid Indonesia",
+    location: "Cibitung & Cikarang",
+    year: "Apr 2016 - Dec 2016",
+    category: "industrial",
     service: "Insulation",
-    image: "https://images.unsplash.com/photo-1616167180479-d5c4146e492b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    desc: "PIR/PUR foam insulation for cryogenic loading lines operating at -160°C."
+    image: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    desc: "Cold insulation maintenance for industrial gas distribution pipelines."
   },
   {
     id: 5,
-    title: "Cooling Tower Maintenance",
-    client: "Indonesia Power",
-    location: "Semarang, Central Java",
-    year: "2024",
+    title: "Cogeneration Boiler Upgrade 2",
+    client: "PT. Sumi Rubber",
+    location: "Cikampek, West Java",
+    year: "May 2011 - Jul 2011",
     category: "power-plant",
-    service: "Maintenance",
-    image: "https://images.unsplash.com/photo-1565610166456-4c4f3468536b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    desc: "Structural repair and protective coating for cooling tower concrete structure."
+    service: "Insulation",
+    image: "projects/boiler.png",
+    desc: "Scaffolding and thermal insulation for Cogeneration Boiler efficiency upgrade."
+  },
+  {
+    id: 1,
+    title: "Expansion Line-4 Project Phase 1-3",
+    client: "PT. South Pasific Viscose",
+    location: "Purwakarta, West Java",
+    year: "2009 - 2011",
+    category: "industrial",
+    service: "Integrated Services",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    desc: "Multi-phase expansion project support involving extensive scaffolding and insulation works."
+  },
+  {
+    id: 10,
+    title: "TYK Gas Asahi Project",
+    client: "PT. TYK Gas Indonesia",
+    location: "Cikampek, West Java",
+    year: "Aug 2017 - Nov 2017",
+    category: "industrial",
+    service: "Scaffolding",
+    image: "projects/cikampek.png",
+    desc: "Installation of access scaffolding for new gas plant facility construction."
   },
   {
     id: 6,
-    title: "Ammonia Plant Turnaround",
-    client: "Pupuk Kaltim",
-    location: "Bontang, East Kalimantan",
-    year: "2023",
+    title: "Palm Oil Mill Cap.45",
+    client: "PT. Astra Agro Lestari",
+    location: "South Kalimantan",
+    year: "Jun 2012 - Oct 2012",
     category: "industrial",
-    service: "Scaffolding",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    desc: "Rapid deployment of access scaffolding for emergency reformer shutdown."
+    service: "Integrated Services",
+    image: "https://plus.unsplash.com/premium_photo-1661962692059-55d5a4319814?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    desc: "Complete insulation and scaffolding services for Palm Oil Mill capacity expansion."
+  },
+  {
+    id: 8,
+    title: "EPC-1 Banyu Urip Support",
+    client: "PT. Schlumberger GN",
+    location: "Bojonegoro, East Java",
+    year: "Nov 2014 - Feb 2015",
+    category: "oil-gas",
+    service: "Integrated Services",
+    image: "projects/schlumberger.jpg",
+    desc: "Supporting specialized well services with high-safety standard scaffolding."
   }
 ];
