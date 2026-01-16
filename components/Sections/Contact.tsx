@@ -16,9 +16,9 @@ const Contact = () => {
               
               <div className="space-y-6">
                 {[
-                  { icon: <MapPin size={20} />, title: "Head Office", desc: "Ruko Grand Galaxy, Bekasi" },
-                  { icon: <Mail size={20} />, title: "Email", desc: "sales@estima.id" },
-                  { icon: <Phone size={20} />, title: "WhatsApp / Call", desc: "0812-XXXX-XXXX" }
+                  { icon: <MapPin size={20} />, title: "Head Office", desc: "Pondok Aren, Tangerang Selatan" },
+                  { icon: <Mail size={20} />, title: "Email", desc: "marketing@estima.id" },
+                  { icon: <Phone size={20} />, title: "WhatsApp / Call", desc: "+62(21)7312345" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-4 group cursor-pointer">
                     <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center transition-colors group-hover:text-white"

@@ -7,8 +7,8 @@ import { COLORS } from '@/lib/Constants';
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    
-    const pathname = usePathname(); 
+
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -26,28 +26,27 @@ const Navbar = () => {
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 border-b ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm border-slate-200 py-3' : 'bg-white/80 backdrop-blur-md border-transparent py-5'}`}>
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0" style={{ backgroundColor: COLORS.primary, boxShadow: `0 10px 15px -3px ${COLORS.primaryLight}` }}>E</div>
-                    <div className="flex flex-col">
-                        <span className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 leading-none">PT ESTIMA<span style={{ color: COLORS.primary }}>.ID</span></span>
-                        <span className="text-[0.65rem] md:text-xs font-bold tracking-widest text-slate-500 uppercase">Reka Sakti</span>
-                    </div>
+                <div className="flex items-center">
+                    <img
+                        src="/estima.png"
+                        alt="PT Estima Reka Sakti"
+                        className="h-10 w-auto object-contain"
+                    />
                 </div>
 
                 {/* --- DESKTOP MENU --- */}
                 <div className="hidden md:flex gap-8 font-medium text-slate-600">
                     {navItems.map((item) => {
                         const isActive = pathname === item.href;
-                        
+
                         return (
-                            <a 
+                            <a
                                 key={item.name}
-                                href={item.href} 
-                                className={`transition-colors ${
-                                    isActive 
-                                    ? 'font-bold' // Kalo aktif, tebelin
-                                    : 'hover:text-[hsl(207,96%,69%)]' // Kalo gak, kasih hover effect biasa
-                                }`}
+                                href={item.href}
+                                className={`transition-colors ${isActive
+                                        ? 'font-bold' // Kalo aktif, tebelin
+                                        : 'hover:text-[hsl(207,96%,69%)]' // Kalo gak, kasih hover effect biasa
+                                    }`}
                                 style={{ color: isActive ? COLORS.primary : undefined }} // Suntik warna kalo aktif
                             >
                                 {item.name}
@@ -66,12 +65,11 @@ const Navbar = () => {
                     {navItems.map((item) => {
                         const isActive = pathname === item.href;
                         return (
-                            <a 
+                            <a
                                 key={item.name}
-                                href={item.href} 
-                                className={`w-full text-center py-2 ${
-                                    isActive ? 'font-bold bg-slate-50' : 'text-slate-600 hover:bg-slate-50'
-                                }`}
+                                href={item.href}
+                                className={`w-full text-center py-2 ${isActive ? 'font-bold bg-slate-50' : 'text-slate-600 hover:bg-slate-50'
+                                    }`}
                                 style={{ color: isActive ? COLORS.primary : undefined }}
                             >
                                 {item.name}

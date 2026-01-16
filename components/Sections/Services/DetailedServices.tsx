@@ -15,8 +15,8 @@ const DetailedServices = () => {
         "Personnel Protection & Energy Conservation"
       ],
       icon: <Thermometer size={40} />,
-      image: "https://images.unsplash.com/photo-1565610166456-4c4f3468536b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      color: COLORS.primary
+      image: "services/insulation.png",
+      color: COLORS.secondary
     },
     {
       id: "scaffolding",
@@ -30,22 +30,7 @@ const DetailedServices = () => {
         "Certified Scaffolders & Inspectors"
       ],
       icon: <Construction size={40} />,
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      color: COLORS.secondary
-    },
-    {
-      id: "painting",
-      title: "Blasting & Painting",
-      subtitle: "Corrosion Control",
-      desc: "Surface preparation and protective coating application to extend the lifespan of steel structures and equipment.",
-      features: [
-        "Abrasive Blasting (Grit, Sand, Garnet)",
-        "Power Tool Cleaning",
-        "Industrial Coating & Lining Application",
-        "CUI (Corrosion Under Insulation) Mitigation"
-      ],
-      icon: <Layers size={40} />,
-      image: "https://plus.unsplash.com/premium_photo-1664303228186-a61e7dc91597?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "services/scaffolding.png",
       color: COLORS.primary
     },
     {
@@ -60,7 +45,7 @@ const DetailedServices = () => {
         "Manpower Supply (Fitters, Welders, Riggers)"
       ],
       icon: <Wrench size={40} />,
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "services/maintenance.jpg",
       color: COLORS.secondary
     }
   ];

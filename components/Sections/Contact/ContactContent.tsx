@@ -20,8 +20,8 @@ const ContactContent = () => {
                                     <div>
                                         <h4 className="font-bold text-slate-900 mb-1">Office Location</h4>
                                         <p className="text-slate-600 leading-relaxed">
-                                            Ruko Grand Galaxy City, Blok RGA No. 23<br />
-                                            Jaka Setia, Bekasi Selatan, Jawa Barat 17147<br />
+                                            Jl. Raya Dr. Setia Budi No.288<br />
+                                            Pondok Aren, Tangerang Selatan, Banten, 15226<br />
                                             Indonesia
                                         </p>
                                     </div>
@@ -33,8 +33,7 @@ const ContactContent = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-slate-900 mb-1">Email Us</h4>
-                                        <p className="text-slate-600">sales@estima.id</p>
-                                        <p className="text-slate-600">support@estima.id</p>
+                                        <p className="text-slate-600">marketing@estima.id</p>
                                     </div>
                                 </div>
 
@@ -44,8 +43,7 @@ const ContactContent = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-slate-900 mb-1">Call Us</h4>
-                                        <p className="text-slate-600">+62 812-XXXX-XXXX (Hotline)</p>
-                                        <p className="text-slate-600">+62 21-XXXX-XXXX (Office)</p>
+                                        <p className="text-slate-600">+62(21)7312345 (Office)</p>
                                     </div>
                                 </div>
 

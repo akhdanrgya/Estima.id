@@ -31,14 +31,14 @@ const Hero = () => {
           </div>
         </div>
         <div className="relative hidden lg:block h-[600px] w-full animate-fadeInRight">
-           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1563293777-62a2d4277732?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"></div>
+           <div className="absolute inset-0 bg-[url('/hero2.jpg')] bg-cover bg-center rounded-2xl shadow-2xl hover:grayscale-0 transition-all duration-700"></div>
            <div className="absolute top-10 -left-10 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-float">
               <div className="p-2 rounded-lg" style={{ backgroundColor: COLORS.primaryLight, color: COLORS.primary }}><Flame size={24}/></div>
               <div><div className="text-xs text-slate-500 font-bold uppercase">Oil & Gas</div><div className="font-bold text-slate-800">Pipeline Insulation</div></div>
            </div>
            <div className="absolute bottom-20 -right-10 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-3 animate-float-delayed">
               <div className="p-2 rounded-lg" style={{ backgroundColor: COLORS.secondaryLight, color: COLORS.secondary }}><Zap size={24}/></div>
-              <div><div className="text-xs text-slate-500 font-bold uppercase">Power Plant</div><div className="font-bold text-slate-800">Turbine Maintenance</div></div>
+              <div><div className="text-xs text-slate-500 font-bold uppercase">Power Plant</div><div className="font-bold text-slate-800">Insulation & Scaffolding</div></div>
            </div>
         </div>
       </div>

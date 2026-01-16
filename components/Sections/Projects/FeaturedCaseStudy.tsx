@@ -9,23 +9,23 @@ const FeaturedCaseStudy = () => {
                     
                     <div className="lg:w-1/2 space-y-6">
                         <div className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider" style={{ color: COLORS.secondary }}>
-                            <Award size={18} /> Featured Case Study
+                            <Award size={18} /> Safety Excellence Award
                         </div>
                         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                            Major Turnaround at <br />
-                            <span className="text-slate-500">Pertamina Balongan</span>
+                            ExxonMobil Cepu <br />
+                            <span className="text-slate-500">Limited (EMCL)</span>
                         </h2>
                         <p className="text-slate-600 text-lg leading-relaxed">
-                            Successfully executed insulation and scaffolding works for the 2023 massive turnaround. Deployed 200+ certified manpower with Zero Accident record over 45 days of non-stop operation.
+                            Proudly contributing to the world-class safety record at Banyu Urip Field. We provided comprehensive insulation and maintenance support, achieving a monumental safety milestone.
                         </p>
                         
                         <div className="grid grid-cols-2 gap-6 pt-4">
                             <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                                <div className="text-3xl font-bold mb-1" style={{ color: COLORS.primary }}>45</div>
-                                <div className="text-xs text-slate-500 uppercase font-bold">Days Duration</div>
+                                <div className="text-3xl md:text-4xl font-extrabold mb-1" style={{ color: COLORS.primary }}>15 M+</div>
+                                <div className="text-xs text-slate-500 uppercase font-bold">Safe Man-Hours</div>
                             </div>
                             <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                                <div className="text-3xl font-bold mb-1" style={{ color: COLORS.secondary }}>0</div>
+                                <div className="text-3xl md:text-4xl font-extrabold mb-1" style={{ color: COLORS.secondary }}>0</div>
                                 <div className="text-xs text-slate-500 uppercase font-bold">LTI (Lost Time Injury)</div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@ const FeaturedCaseStudy = () => {
                     <div className="lg:w-1/2 relative">
                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-blue-100 to-transparent rounded-full opacity-50 blur-3xl -z-10"></div>
                          <img 
-                            src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                            src="projects/cepu.jpg" 
                             alt="Refinery Project" 
                             className="rounded-3xl shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
                         />
@@ -49,7 +49,7 @@ const FeaturedCaseStudy = () => {
                             </div>
                             <div>
                                 <div className="text-xs text-slate-500 font-bold uppercase">Status</div>
-                                <div className="font-bold text-slate-900">100% Completed</div>
+                                <div className="font-bold text-slate-900">Project Completed</div>
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ const ServicesHero = () => {
   return (
     <section className="relative pt-32 pb-20 bg-slate-900 overflow-hidden">
       {/* Abstract Background */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-20"></div>
+      <div className="absolute inset-0 bg-[url('/header.jpg')] bg-cover bg-center opacity-70"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
       
       <div className="container mx-auto px-6 relative z-10 text-center">
