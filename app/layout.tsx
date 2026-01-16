@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Estima Reka Sakti",
   description: "PT Estima Reka Sakti is a leading industrial service provider in Indonesia specializing in Thermal Insulation, Scaffolding, Painting, and Plant Maintenance for Oil & Gas and Power Plants.",
+  icons: {
+    icon: '/favicon.ico', // Pastikan file ada di folder public/favicon.ico
+    // Atau kalau punya logo PNG:
+    // icon: '/estima.png', 
+  },
 };
 
 export default function RootLayout({
