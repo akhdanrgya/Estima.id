@@ -68,8 +68,6 @@ const ContactContent = () => {
                                 height="100%"
                                 frameBorder="0"
                                 scrolling="no"
-                                marginHeight="0"
-                                marginWidth="0"
                                 src="https://maps.google.com/maps?q=Ruko+Grand+Galaxy+City+Blok+RGA+No+23+Bekasi&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 className="filter grayscale hover:grayscale-0 transition-all duration-700"
                             ></iframe>
@@ -91,11 +89,12 @@ const ContactContent = () => {
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-slate-500 uppercase">Full Name</label>
-                                        <input type="text" className="w-full bg-white border border-slate-200 p-4 rounded-xl focus:outline-none focus:ring-2 transition-all" style={{ '--tw-ring-color': COLORS.primary }} placeholder="John Doe" />
+                                        {/* 💉 VACCINATED: Added 'as React.CSSProperties' to soothe TypeScript */}
+                                        <input type="text" className="w-full bg-white border border-slate-200 p-4 rounded-xl focus:outline-none focus:ring-2 transition-all" style={{ '--tw-ring-color': COLORS.primary } as React.CSSProperties} placeholder="John Doe" />
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-slate-500 uppercase">Email Address</label>
-                                        <input type="email" className="w-full bg-white border border-slate-200 p-4 rounded-xl focus:outline-none focus:ring-2 transition-all" style={{ '--tw-ring-color': COLORS.primary }} placeholder="john@company.com" />
+                                        <input type="email" className="w-full bg-white border border-slate-200 p-4 rounded-xl focus:outline-none focus:ring-2 transition-all" style={{ '--tw-ring-color': COLORS.primary } as React.CSSProperties} placeholder="john@company.com" />
                                     </div>
                                 </div>
 
@@ -104,12 +103,12 @@ const ContactContent = () => {
                                         <label className="text-xs font-bold text-slate-500 uppercase">Company / Organization</label>
                                         <div className="relative">
                                             <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                                            <input type="text" className="w-full bg-white border border-slate-200 p-4 pl-12 rounded-xl focus:outline-none focus:ring-2 transition-all" style={{ '--tw-ring-color': COLORS.primary }} placeholder="PT Estima" />
+                                            <input type="text" className="w-full bg-white border border-slate-200 p-4 pl-12 rounded-xl focus:outline-none focus:ring-2 transition-all" style={{ '--tw-ring-color': COLORS.primary } as React.CSSProperties} placeholder="PT Estima" />
                                         </div>
                                     </div>
                                     <div className="space-y-2">
                                         <label className="text-xs font-bold text-slate-500 uppercase">Subject</label>
-                                        <select className="w-full bg-white border border-slate-200 p-4 rounded-xl focus:outline-none focus:ring-2 transition-all text-slate-600 appearance-none" style={{ '--tw-ring-color': COLORS.primary }}>
+                                        <select className="w-full bg-white border border-slate-200 p-4 rounded-xl focus:outline-none focus:ring-2 transition-all text-slate-600 appearance-none" style={{ '--tw-ring-color': COLORS.primary } as React.CSSProperties}>
                                             <option>General Inquiry</option>
                                             <option>Request for Quotation (RFQ)</option>
                                             <option>Project Consultation</option>
@@ -121,7 +120,7 @@ const ContactContent = () => {
 
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-slate-500 uppercase">Message / Project Details</label>
-                                    <textarea rows={6} className="w-full bg-white border border-slate-200 p-4 rounded-xl focus:outline-none focus:ring-2 transition-all" style={{ '--tw-ring-color': COLORS.primary }} placeholder="Please describe your project scope, location, and timeline..."></textarea>
+                                    <textarea rows={6} className="w-full bg-white border border-slate-200 p-4 rounded-xl focus:outline-none focus:ring-2 transition-all" style={{ '--tw-ring-color': COLORS.primary } as React.CSSProperties} placeholder="Please describe your project scope, location, and timeline..."></textarea>
                                 </div>
 
                                 <div className="flex items-center gap-3">

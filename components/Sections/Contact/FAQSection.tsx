@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { COLORS } from '@/lib/Constants';
 
 const FAQSection = () => {
-    const [openIndex, setOpenIndex] = useState(null);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const faqs = [
         { q: "What industries do you specialize in?", a: "We primarily serve Heavy Industries such as Oil & Gas Refineries, Petrochemical Plants, Power Generation (PLTU/PLTGU), and Fertilizer Plants." },

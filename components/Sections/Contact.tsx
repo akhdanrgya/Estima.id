@@ -1,4 +1,5 @@
 "use client"
+import React from 'react';
 import { MapPin, Mail, Phone } from 'lucide-react';
 import { COLORS } from '@/lib/Constants';
 
@@ -54,13 +55,13 @@ const Contact = () => {
                 <div className="space-y-1">
                   <label className="text-xs font-bold text-slate-500 uppercase">Name</label>
                   <input type="text" className="w-full bg-white border border-slate-200 p-3 rounded-lg focus:outline-none focus:ring-1 transition-all" 
-                         style={{ '--tw-ring-color': COLORS.primary, '--tw-border-opacity': 1 }} 
+                         style={{ '--tw-ring-color': COLORS.primary, '--tw-border-opacity': 1 } as React.CSSProperties} // 💉 Vaksinasi Type
                          placeholder="Your Name" />
                 </div>
                 <div className="space-y-1">
                   <label className="text-xs font-bold text-slate-500 uppercase">Company</label>
                   <input type="text" className="w-full bg-white border border-slate-200 p-3 rounded-lg focus:outline-none focus:ring-1 transition-all" 
-                         style={{ '--tw-ring-color': COLORS.primary }} 
+                         style={{ '--tw-ring-color': COLORS.primary } as React.CSSProperties} // 💉 Vaksinasi Type
                          placeholder="Company Name" />
                 </div>
               </div>
@@ -68,7 +69,8 @@ const Contact = () => {
               <div className="space-y-1">
                   <label className="text-xs font-bold text-slate-500 uppercase">Service Type</label>
                   <select className="w-full bg-white border border-slate-200 p-3 rounded-lg focus:outline-none focus:ring-1 transition-all text-slate-600"
-                          style={{ '--tw-ring-color': COLORS.primary }}>
+                          style={{ '--tw-ring-color': COLORS.primary } as React.CSSProperties} // 💉 Vaksinasi Type
+                  >
                     <option>Select Requirement...</option>
                     <option>Polyurethane Spray Foam</option>
                     <option>Cold Storage Construction</option>
@@ -80,7 +82,7 @@ const Contact = () => {
               <div className="space-y-1">
                   <label className="text-xs font-bold text-slate-500 uppercase">Message</label>
                   <textarea rows={4} className="w-full bg-white border border-slate-200 p-3 rounded-lg focus:outline-none focus:ring-1 transition-all"
-                            style={{ '--tw-ring-color': COLORS.primary }} 
+                            style={{ '--tw-ring-color': COLORS.primary } as React.CSSProperties} // 💉 Vaksinasi Type
                             placeholder="Details (Area size, Project location, etc...)"></textarea>
               </div>
 
