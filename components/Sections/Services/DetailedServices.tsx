@@ -30,7 +30,7 @@ const DetailedServices = () => {
         "Certified Scaffolders & Inspectors"
       ],
       icon: <Construction size={40} />,
-      image: "services/scaffolding.png",
+      image: "services/scaffolding.jpg",
       color: COLORS.primary
     },
     {
