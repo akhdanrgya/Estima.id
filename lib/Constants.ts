@@ -107,3 +107,9 @@ export const ALL_PROJECTS = [
     desc: "Supporting specialized well services with high-safety standard scaffolding."
   }
 ];
+
+export const CLIENTS = Array.from({ length: 15 }, (_, i) => ({
+  id: i + 1,
+  logo: `/clients/${i + 1}-1.png`,
+  name: `Client Partner ${i + 1}`
+}));
