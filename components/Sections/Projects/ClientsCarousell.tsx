@@ -13,7 +13,7 @@ const ClientCarousel = () => {
         <div className="animate-marquee whitespace-nowrap flex items-center gap-16 px-8">
           {/* Loop 1 */}
           {CLIENTS.map((client, i) => (
-            <div key={`l1-${i}`} className="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer">
+            <div key={`l1-${i}`} className="w-32 h-16 flex items-center justify-center hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer">
               <img 
                 src={client.logo} 
                 alt={client.name} 
@@ -25,7 +25,7 @@ const ClientCarousel = () => {
           ))}
           {/* Loop 2 (Duplicate for smooth scroll) */}
           {CLIENTS.map((client, i) => (
-            <div key={`l2-${i}`} className="w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer">
+            <div key={`l2-${i}`} className="w-32 h-16 flex items-center justify-center hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer">
               <img 
                 src={client.logo} 
                 alt={client.name} 
