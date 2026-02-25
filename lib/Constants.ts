@@ -37,7 +37,7 @@ export const ALL_PROJECTS = [
     year: "Sep 2020 - Nov 2020",
     category: "industrial",
     service: "Scaffolding",
-    image: "services/scaffolding.jpg",
+    image: "projects/pelitung.jpeg",
     desc: "Industrial gas facility construction support providing safe access solutions."
   },
   {
@@ -70,7 +70,7 @@ export const ALL_PROJECTS = [
     year: "2009 - 2011",
     category: "industrial",
     service: "Integrated Services",
-    image: "projects/purwakarta.png",
+    image: "projects/expansion.jpeg",
     desc: "Multi-phase expansion project support involving extensive scaffolding and insulation works."
   },
   {
@@ -92,7 +92,7 @@ export const ALL_PROJECTS = [
     year: "Jun 2012 - Oct 2012",
     category: "industrial",
     service: "Integrated Services",
-    image: "projects/kalimantan.jpg",
+    image: "projects/palm.jpeg",
     desc: "Complete insulation and scaffolding services for Palm Oil Mill capacity expansion."
   },
   {

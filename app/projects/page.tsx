@@ -3,6 +3,7 @@ import ProjectsHero from '@/components/Sections/Projects/ProjectsHero';
 import ClientCarousel from '@/components/Sections/Projects/ClientsCarousell';
 import ProjectsGallery from '@/components/Sections/Projects/ProjectsGallery';
 import FeaturedCaseStudy from '@/components/Sections/Projects/FeaturedCaseStudy';
+import SafetyCertificates from '@/components/Sections/Projects/SafetyCertificates';
 import Footer from '@/components/Layout/Footer';
 
 const ProjectsPage = () => {
@@ -13,6 +14,7 @@ const ProjectsPage = () => {
             <ClientCarousel />
             <ProjectsGallery />
             <FeaturedCaseStudy />
+            <SafetyCertificates />
             <Footer />
         </div>
     );
