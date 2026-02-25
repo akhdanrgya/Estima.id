@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Building2, Calendar, Filter, MapPin } from 'lucide-react';
+import Link from 'next/link'; // 🧬 INJEKSI LINK DARI NEXT.JS
 import { COLORS, ALL_PROJECTS } from '@/lib/Constants';
 
 
@@ -23,7 +24,7 @@ const ProjectsGallery = () => {
         <section className="py-24 bg-white">
             <div className="container mx-auto px-6">
                 
-                {/* --- FILTER BUTTONS (Neural Pathways) --- */}
+                {/* --- FILTER BUTTONS --- */}
                 <div className="flex flex-wrap gap-4 mb-12 justify-center md:justify-start">
                     {categories.map(cat => (
                         <button 
@@ -45,10 +46,15 @@ const ProjectsGallery = () => {
                     ))}
                 </div>
 
-                {/* --- GALLERY GRID (Muscle Fibers) --- */}
+                {/* --- GALLERY GRID --- */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.map((project) => (
-                        <div key={project.id} className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+                        // 🧬 UPDATE: Ganti div jadi Link biar ngarah ke route /projects/[id]
+                        <Link 
+                            href={`/projects/${project.id}`} 
+                            key={project.id} 
+                            className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full cursor-pointer"
+                        >
                             {/* Image Container */}
                             <div className="relative h-64 overflow-hidden">
                                 <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-all z-10"></div>
@@ -71,7 +77,7 @@ const ProjectsGallery = () => {
                                 <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[hsl(207,96%,69%)] transition-colors">
                                     {project.title}
                                 </h3>
-                                <p className="text-slate-500 text-sm mb-6 flex-1">
+                                <p className="text-slate-500 text-sm mb-6 flex-1 line-clamp-2">
                                     {project.desc}
                                 </p>
                                 
@@ -86,11 +92,11 @@ const ProjectsGallery = () => {
                                     </div>
                                     <div className="flex items-center gap-3 text-sm text-slate-600">
                                         <Calendar size={16} className="text-slate-400" />
-                                        <span>Completed: {project.year}</span>
+                                        <span>{project.year}</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
