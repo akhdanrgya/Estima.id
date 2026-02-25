@@ -1,5 +1,5 @@
 "use client"
-import { use } from 'react';
+import { use, useRef, useState } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Building2, Calendar, MapPin, ShieldCheck, ArrowLeft } from 'lucide-react';
@@ -16,7 +16,36 @@ export default function ProjectDetail(props: { params: Promise<{ id: string }> }
     return notFound();
   }
 
-  const carouselImages = project.images || [project.image, project.image, project.image];
+  const carouselImages = project.images || [project.image];
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    if (scrollRef.current) {
+      setStartX(e.pageX - scrollRef.current.offsetLeft);
+      setScrollLeft(scrollRef.current.scrollLeft);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // scroll speed multiplier
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
 
   return (
     <>
@@ -32,11 +61,18 @@ export default function ProjectDetail(props: { params: Promise<{ id: string }> }
           </Link>
 
           <div className="mb-12">
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-hide">
+            <div
+              ref={scrollRef}
+              onMouseDown={handleMouseDown}
+              onMouseLeave={handleMouseLeave}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              className={`flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-hide select-none ${carouselImages.length > 1 ? 'cursor-grab active:cursor-grabbing' : ''}`}
+            >
               {carouselImages.map((img, idx) => (
-                <div key={idx} className="snap-center w-full md:w-[80%] flex-shrink-0 relative rounded-3xl overflow-hidden shadow-lg h-[300px] md:h-[500px] bg-slate-100 flex items-center justify-center">
+                <div key={idx} className={`snap-center w-full ${carouselImages.length > 1 ? 'md:w-[80%] flex-shrink-0' : 'md:w-full'} relative rounded-3xl overflow-hidden shadow-lg h-[300px] md:h-[500px] bg-slate-100 flex items-center justify-center pointer-events-none`}>
                   <img
-                    src={img}
+                    src={img.startsWith('/') ? img : `/${img}`}
                     alt={`${project.title} - View ${idx + 1}`}
                     className="w-full h-full object-cover"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -44,11 +80,14 @@ export default function ProjectDetail(props: { params: Promise<{ id: string }> }
                 </div>
               ))}
             </div>
-            <div className="flex gap-2 justify-center mt-2">
-              <span className="w-2 h-2 rounded-full bg-slate-800"></span>
-              <span className="w-2 h-2 rounded-full bg-slate-300"></span>
-              <span className="w-2 h-2 rounded-full bg-slate-300"></span>
-            </div>
+
+            {carouselImages.length > 1 && (
+              <div className="flex gap-2 justify-center mt-2">
+                {carouselImages.map((_, idx) => (
+                  <span key={idx} className={`w-2 h-2 rounded-full ${idx === 0 ? 'bg-slate-800' : 'bg-slate-300'}`}></span>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
