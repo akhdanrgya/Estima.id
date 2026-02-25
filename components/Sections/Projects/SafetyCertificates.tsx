@@ -1,6 +1,7 @@
 "use client";
 import { ShieldCheck, FileCheck, Check, Trophy, Award } from "lucide-react"
 import { COLORS } from "@/lib/Constants";
+import { motion, Variants } from "framer-motion";
 
 const SafetyCertificates = () => {
     const awards = [
@@ -27,6 +28,16 @@ const SafetyCertificates = () => {
         },
     ];
 
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+    };
+
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
     return (
         <section className="py-24 bg-white relative overflow-hidden">
             {/* Abstract Background */}
@@ -43,9 +54,15 @@ const SafetyCertificates = () => {
                 </div>
 
                 {/* 🧬 Grid 3 Kolom untuk 3 Sertifikat Utama */}
-                <div className="grid md:grid-cols-3 gap-8">
+                <motion.div
+                    className="grid md:grid-cols-3 gap-8"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
                     {awards.map((award) => (
-                        <div key={award.id} className="group bg-white rounded-2xl border border-slate-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
+                        <motion.div variants={itemVariants} key={award.id} className="group bg-white rounded-2xl border border-slate-100 hover:border-blue-100 hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full">
                             {/* Image Header */}
                             <div className="h-64 bg-slate-50 flex items-center justify-center p-6 border-b border-slate-50 relative">
                                 <img
@@ -81,9 +98,9 @@ const SafetyCertificates = () => {
                                     <ShieldCheck size={14} /> Safety Achievement
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

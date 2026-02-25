@@ -1,5 +1,7 @@
+"use client";
 import { ArrowRight, ClipboardCheck, Construction, Layers, Thermometer, Wrench } from 'lucide-react';
 import { COLORS } from '@/lib/Constants';
+import { motion, Variants } from 'framer-motion';
 
 const DetailedServices = () => {
   const serviceDetails = [
@@ -50,27 +52,44 @@ const DetailedServices = () => {
     }
   ];
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="space-y-32">
           {serviceDetails.map((service, index) => (
-            <div key={service.id} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}>
-              
+            <motion.div
+              key={service.id}
+              className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+
               {/* Image Side */}
-              <div className="w-full lg:w-1/2 relative group">
+              <motion.div variants={itemVariants} className="w-full lg:w-1/2 relative group">
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-all duration-500 rounded-3xl z-10"></div>
                 <div className="absolute -inset-4 rounded-3xl opacity-20 group-hover:opacity-40 transition-all duration-500 blur-xl" style={{ backgroundColor: service.color }}></div>
                 <img src={service.image} alt={service.title} className="relative rounded-3xl shadow-2xl w-full h-[400px] object-cover z-0" />
-                
+
                 {/* Floating Icon */}
                 <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-white rounded-2xl shadow-xl flex items-center justify-center z-20" style={{ color: service.color }}>
                   {service.icon}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Content Side */}
-              <div className="w-full lg:w-1/2 space-y-6">
+              <motion.div variants={itemVariants} className="w-full lg:w-1/2 space-y-6">
                 <div className="inline-block px-3 py-1 bg-slate-100 rounded text-xs font-bold uppercase tracking-wider text-slate-500">
                   {service.subtitle}
                 </div>
@@ -79,7 +98,7 @@ const DetailedServices = () => {
                 <p className="text-slate-600 text-lg leading-relaxed">
                   {service.desc}
                 </p>
-                
+
                 <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
                   <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                     <ClipboardCheck size={20} style={{ color: service.color }} /> Key Capabilities
@@ -97,9 +116,9 @@ const DetailedServices = () => {
                 <button className="flex items-center gap-2 font-bold hover:gap-3 transition-all mt-4" style={{ color: service.color }}>
                   Request Technical Spec <ArrowRight size={20} />
                 </button>
-              </div>
+              </motion.div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -2,9 +2,20 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { COLORS } from '@/lib/Constants';
+import { motion, Variants } from 'framer-motion';
 
 const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+    };
+
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 15 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+    };
 
     const faqs = [
         { q: "What industries do you specialize in?", a: "We primarily serve Heavy Industries such as Oil & Gas Refineries, Petrochemical Plants, Power Generation (PLTU/PLTGU), and Fertilizer Plants." },
@@ -20,11 +31,17 @@ const FAQSection = () => {
                     <h2 className="text-3xl font-bold text-slate-900">Common Questions</h2>
                     <p className="text-slate-500 mt-2">Quick answers to frequently asked technical questions.</p>
                 </div>
-                
-                <div className="space-y-4">
+
+                <motion.div
+                    className="space-y-4"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                >
                     {faqs.map((faq, idx) => (
-                        <div key={idx} className="border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300" style={{ borderColor: openIndex === idx ? COLORS.primary : '#e2e8f0' }}>
-                            <button 
+                        <motion.div variants={itemVariants} key={idx} className="border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300" style={{ borderColor: openIndex === idx ? COLORS.primary : '#e2e8f0' }}>
+                            <button
                                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                                 className="w-full flex justify-between items-center p-6 text-left bg-white hover:bg-slate-50 transition-colors"
                             >
@@ -36,9 +53,9 @@ const FAQSection = () => {
                                     {faq.a}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

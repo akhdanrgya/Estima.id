@@ -1,15 +1,37 @@
 "use client"
 import { MapPin, Mail, Phone, Clock, Building2, Send } from 'lucide-react';
 import { COLORS } from '@/lib/Constants';
+import { motion, Variants } from 'framer-motion';
 
 const ContactContent = () => {
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
+    };
+
+    const itemLeftVariants: Variants = {
+        hidden: { opacity: 0, x: -30 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
+    const itemRightVariants: Variants = {
+        hidden: { opacity: 0, x: 30 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
     return (
         <section className="py-24 bg-white">
             <div className="container mx-auto px-6">
-                <div className="flex flex-col lg:flex-row gap-16">
+                <motion.div
+                    className="flex flex-col lg:flex-row gap-16"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                >
 
                     {/* --- LEFT: SENSORY INPUT (Info & Map) --- */}
-                    <div className="lg:w-5/12 space-y-12">
+                    <motion.div variants={itemLeftVariants} className="lg:w-5/12 space-y-12">
                         <div>
                             <h3 className="text-2xl font-bold text-slate-900 mb-6">Headquarters</h3>
                             <div className="space-y-6">
@@ -77,10 +99,10 @@ const ContactContent = () => {
                                 <MapPin size={14} style={{ color: COLORS.primary }} /> PT Estima Reka Sakti
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* --- RIGHT: SYNAPSE TRANSMISSION (Form) --- */}
-                    <div className="lg:w-7/12">
+                    <motion.div variants={itemRightVariants} className="lg:w-7/12">
                         <div className="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-100 h-full">
                             <h3 className="text-2xl font-bold text-slate-900 mb-2">Send a Message</h3>
                             <p className="text-slate-500 mb-8">Fill out the form below and our engineering team will respond within 24 hours.</p>
@@ -136,9 +158,9 @@ const ContactContent = () => {
                                 </button>
                             </form>
                         </div>
-                    </div>
+                    </motion.div>
 
-                </div>
+                </motion.div>
             </div>
         </section>
     );
