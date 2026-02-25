@@ -1,8 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Estima.id - PT Estima Reka Sakti
 
-## Getting Started
+A modern, responsive company profile website for PT Estima Reka Sakti, specializing in Industrial Insulation, Scaffolding Access, and Plant Maintenance for heavy industries (Oil & Gas, Power Plants, Petrochemical).
 
-First, run the development server:
+## 🚀 Features
+
+- **Modern & Responsive UI**: Built with Tailwind CSS for seamless viewing across all devices.
+- **Dynamic Scroll Animations**: Engaging user experience using `framer-motion` for reveal and stagger effects on scroll across all sections.
+- **Projects Gallery**: Showcase of past projects featuring category filtering.
+- **Interactive Project Details**: Draggable image carousel for multi-image project views.
+- **Contact & Inquiry**: Easy-to-use contact sections with integrated maps and forms.
+
+## 🛠️ Technology Stack
+
+- **Framework**: [Next.js](https://nextjs.org) (App Router)
+- **Library**: [React](https://reactjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+## 💻 Getting Started
+
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +44,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/`: Next.js App Router root.
+  - `page.tsx`: Main landing page assembling all homepage sections.
+  - `projects/[id]/page.tsx`: Dynamic routing page for viewing specific project details.
+- `components/Sections/`: Modular React components for each section of the website (Hero, Services, Projects, Contact, FAQ, etc.).
+- `lib/Constants.ts`: Centralized data store (Company Info, Projects Database, Service Details, Styling Tokens).
+- `public/`: Static assets folder containing images, logos, and certificates.
 
-## Learn More
+## 📄 License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is proprietary and confidential to PT Estima Reka Sakti.
