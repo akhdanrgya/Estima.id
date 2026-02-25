@@ -24,8 +24,8 @@ const WhyUs = () => {
          <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700">
             <div className="grid grid-cols-2 gap-8 text-center">
                <div><div className="text-4xl font-extrabold text-white mb-1">50+</div><div className="text-xs uppercase tracking-wider text-slate-400">Industrial Projects</div></div>
-               <div><div className="text-4xl font-extrabold text-white mb-1">10<span className="text-2xl" style={{ color: COLORS.primary }}>Yrs</span></div><div className="text-xs uppercase tracking-wider text-slate-400">Experience</div></div>
-               <div className="col-span-2 border-t border-slate-700 pt-6 mt-2"><p className="text-slate-300 italic">"Estima delivered scaffolding and insulation for our turbine overhaul ahead of schedule."</p><div className="mt-2 text-sm font-bold" style={{ color: COLORS.secondary }}>- Plant Manager Testimonial</div></div>
+               <div><div className="text-4xl font-extrabold text-white mb-1">20<span className="text-2xl" style={{ color: COLORS.primary }}>Yrs</span></div><div className="text-xs uppercase tracking-wider text-slate-400">Experience</div></div>
+               <div className="col-span-2 border-t border-slate-700 pt-6 mt-2"><p className="text-slate-300 italic">"Estima delivered scaffolding and insulation for our boiler overhaul ahead of schedule."</p><div className="mt-2 text-sm font-bold" style={{ color: COLORS.secondary }}>- Plant Manager Testimonial</div></div>
             </div>
          </div>
       </div>

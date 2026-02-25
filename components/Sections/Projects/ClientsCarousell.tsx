@@ -18,7 +18,6 @@ const ClientCarousel = () => {
                 src={client.logo} 
                 alt={client.name} 
                 className="max-w-full max-h-full object-contain"
-                // 💉 VAKSIN: Kita casting targetnya jadi HTMLImageElement
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
             </div>
