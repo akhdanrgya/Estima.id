@@ -72,7 +72,7 @@ const SafetyCertificates = () => {
                             {/* Content Body */}
                             <div className="p-8 flex-1 flex flex-col">
                                 <div className="mb-auto">
-                                    <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">{award.issuer}</div>
+                                    <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">{award.name}</div>
                                     <h3 className="text-xl font-bold text-slate-900 mb-4">{award.title}</h3>
                                     <p className="text-slate-500 text-sm leading-relaxed">{award.desc}</p>
                                 </div>
