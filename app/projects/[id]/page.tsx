@@ -22,6 +22,7 @@ export default function ProjectDetail(props: { params: Promise<{ id: string }> }
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
@@ -47,6 +48,42 @@ export default function ProjectDetail(props: { params: Promise<{ id: string }> }
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+
+    // Find the child that is closest to the center points
+    let closestIndex = 0;
+    let minDistance = Infinity;
+    const containerCenter = container.scrollLeft + container.clientWidth / 2;
+
+    Array.from(container.children).forEach((child, index) => {
+      const el = child as HTMLElement;
+      const childCenter = el.offsetLeft + el.clientWidth / 2;
+      const distance = Math.abs(containerCenter - childCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    if (closestIndex !== activeIndex) {
+      setActiveIndex(closestIndex);
+    }
+  };
+
+  const scrollToImage = (index: number) => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const child = container.children[index] as HTMLElement;
+      if (child) {
+        const scrollCenter = child.offsetLeft + (child.clientWidth / 2) - (container.clientWidth / 2);
+        container.scrollTo({ left: scrollCenter, behavior: 'smooth' });
+        setActiveIndex(index);
+      }
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -67,7 +104,8 @@ export default function ProjectDetail(props: { params: Promise<{ id: string }> }
               onMouseLeave={handleMouseLeave}
               onMouseUp={handleMouseUp}
               onMouseMove={handleMouseMove}
-              className={`flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-hide select-none ${carouselImages.length > 1 ? 'cursor-grab active:cursor-grabbing' : ''}`}
+              onScroll={handleScroll}
+              className={`flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-hide select-none scroll-smooth ${carouselImages.length > 1 ? 'cursor-grab active:cursor-grabbing' : ''}`}
             >
               {carouselImages.map((img, idx) => (
                 <div key={idx} className={`snap-center w-full ${carouselImages.length > 1 ? 'md:w-[80%] flex-shrink-0' : 'md:w-full'} relative rounded-3xl overflow-hidden shadow-lg h-[300px] md:h-[500px] bg-slate-100 flex items-center justify-center pointer-events-none`}>
@@ -84,7 +122,12 @@ export default function ProjectDetail(props: { params: Promise<{ id: string }> }
             {carouselImages.length > 1 && (
               <div className="flex gap-2 justify-center mt-2">
                 {carouselImages.map((_, idx) => (
-                  <span key={idx} className={`w-2 h-2 rounded-full ${idx === 0 ? 'bg-slate-800' : 'bg-slate-300'}`}></span>
+                  <button
+                    key={idx}
+                    onClick={() => scrollToImage(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`w-3 h-3 rounded-full transition-all ${idx === activeIndex ? 'bg-slate-800 scale-110' : 'bg-slate-300 hover:bg-slate-500'}`}
+                  ></button>
                 ))}
               </div>
             )}
