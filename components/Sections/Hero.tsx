@@ -3,6 +3,7 @@ import React from 'react';
 import { Factory, ShieldCheck, ArrowRight, Flame, Zap } from 'lucide-react';
 import { COLORS } from '@/lib/Constants';
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 
 const Hero = () => {
   const containerVariants: Variants = {
@@ -52,8 +53,8 @@ const Hero = () => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 pt-2">
-            <button className="text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all shadow-lg hover:-translate-y-1" style={{ backgroundColor: COLORS.primary }}>Our Services <ArrowRight className="w-5 h-5" /></button>
-            <button className="border-2 border-slate-200 hover:border-slate-800 text-slate-600 hover:text-slate-900 px-8 py-4 rounded-lg font-bold transition-all bg-white hover:bg-slate-50">View Portfolio</button>
+            <Link className="text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all shadow-lg hover:-translate-y-1" style={{ backgroundColor: COLORS.primary }} href="/services">Our Services <ArrowRight className="w-5 h-5" /></Link>
+            <Link className="border-2 border-slate-200 hover:border-slate-800 text-slate-600 hover:text-slate-900 px-8 py-4 rounded-lg font-bold transition-all bg-white hover:bg-slate-50" href="/portfolio">View Portfolio</Link>
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex items-center gap-6 text-sm font-medium text-slate-500 pt-4">
